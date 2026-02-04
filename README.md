@@ -182,6 +182,29 @@ python/
 - **Backend**: Express.js, Multer, ExcelJS
 - **Grading API**: Flask, Python subprocess
 
+## 🏷️ Version Control
+
+### When You Make Version 2 Later:
+
+```powershell
+# After making changes...
+git add .
+git commit -m "Version 2.0 - Added new feature XYZ"
+git push origin main
+
+# Create version 2 tag
+git tag -a v2.0 -m "Version 2.0 - Description"
+git push origin v2.0
+```
+
+### Switching Between Versions:
+
+```powershell
+git checkout v1.0   # Go to Version 1
+git checkout v2.0   # Go to Version 2
+git checkout main   # Go to latest code
+```
+
 ## 📝 License
 
 MIT License - Feel free to use and modify!
