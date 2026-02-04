@@ -1,0 +1,24 @@
+{
+  "name": "autograder-app",
+  "version": "1.0.0",
+  "description": "C Programming Assignment Autograder - Full Stack Application",
+  "scripts": {
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run python\"",
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm run dev",
+    "python": "cd python && python app.py",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "autograder",
+    "c-programming",
+    "education"
+  ],
+  "author": "",
+  "license": "MIT"
+}
