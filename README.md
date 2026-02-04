@@ -118,7 +118,6 @@ The autograder supports various filename formats:
 ## 📊 Output Files
 
 1. **Excel Grades File** (`Compilation_Grades.xlsx`)
-
    - Student names
    - Score for each question (0 or marks if compiled)
    - Total score

@@ -95,7 +95,7 @@ app.post("/api/grade", upload.array("files"), async (req, res) => {
       },
       {
         timeout: 300000, // 5 minutes timeout
-      }
+      },
     );
 
     const gradingResults = pythonResponse.data;
@@ -157,7 +157,10 @@ app.get("/api/download-excel", async (req, res) => {
 
     // Sort by modification time (newest first)
     const latestFile = files
-      .map((f) => ({ name: f, mtime: fs.statSync(path.join(resultsDir, f)).mtime }))
+      .map((f) => ({
+        name: f,
+        mtime: fs.statSync(path.join(resultsDir, f)).mtime,
+      }))
       .sort((a, b) => b.mtime - a.mtime)[0].name;
     const filePath = path.join(resultsDir, latestFile);
 
@@ -178,7 +181,10 @@ app.get("/api/download-error-log", async (req, res) => {
 
     // Sort by modification time (newest first)
     const latestFile = files
-      .map((f) => ({ name: f, mtime: fs.statSync(path.join(resultsDir, f)).mtime }))
+      .map((f) => ({
+        name: f,
+        mtime: fs.statSync(path.join(resultsDir, f)).mtime,
+      }))
       .sort((a, b) => b.mtime - a.mtime)[0].name;
     const filePath = path.join(resultsDir, latestFile);
 
@@ -333,7 +339,7 @@ async function generateErrorLogFile(results, config, sessionId) {
   content += "=".repeat(100) + "\n\n";
   content += `Total Students: ${results.totalStudents}\n`;
   content += `Average Score: ${results.averageScore.toFixed(
-    2
+    2,
   )}/${totalMarks}\n`;
   content += `Highest Score: ${results.highestScore}/${totalMarks}\n`;
   content += `Lowest Score: ${results.lowestScore}/${totalMarks}\n`;
